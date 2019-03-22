@@ -1,0 +1,18 @@
+﻿
+==================================NHLContext=======================================
+
+
+Enable-Migrations -ContextTypeName NHLContext -MigrationsDirectory Migratons\NHL
+
+add-Migration -ConfigurationTypeName CoreFirstPrimary.Migratons.NHL.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName CoreFirstPrimary.Migratons.NHL.Configuration 
+
+
+==================================ApplicationDBContext===============================
+
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migratons\Identity
+
+add-Migration -ConfigurationTypeName CoreFirstPrimary.Migratons.Identity.Configuration "InitialIdentity"
+
+update-database -ConfigurationTypeName CoreFirstPrimary.Migratons.Identity.Configuration 
